@@ -6,6 +6,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<core:url value="/removeEmpresa?id=" var="linkServletRemoveEmpresa"/>
+<core:url value="/mostraEmpresa?id=" var="linkServletMostraEmpresa"/>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +27,11 @@
 	<ul>
 		<core:forEach items="${empresas}" var="empresa">		
 			<li>
+				${empresa.id} - 
 				${empresa.nome} -
-				<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/> 
+				<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>
+				<a href="${linkServletRemoveEmpresa}${empresa.id}">Remove</a>
+				<a href="${linkServletMostraEmpresa}${empresa.id}">Editar</a>
 			</li>
 		</core:forEach>
 	</ul>
