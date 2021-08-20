@@ -14,6 +14,10 @@
 </head>
 <body>
 
+	<core:if test="${not empty empresa }">
+		Empresa ${ empresa } cadastrada com sucesso!		
+	</core:if>
+
 	Lista de Empresas:
 	<br />
 
