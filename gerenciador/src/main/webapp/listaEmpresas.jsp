@@ -2,18 +2,19 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@ page
-	import="java.util.List, br.com.alura.gerenciador.servlet.Empresa"%>
+	import="java.util.List,br.com.alura.gerenciador.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<core:url value="/removeEmpresa?id=" var="linkServletRemoveEmpresa"/>
-<core:url value="/mostraEmpresa?id=" var="linkServletMostraEmpresa"/>
+<core:url value="/entrada?acao=RemoveEmpresa&id=" var="linkServletRemoveEmpresa"/>
+<core:url value="/entrada?acao=MostraEmpresa&id=" var="linkServletMostraEmpresa"/>
+<core:url value="/formNovaEmpresa.jsp" var="linkEntradaNovaEmpresa"/>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Java Standard Taglib</title>
+<title>Lista Empresas</title>
 </head>
 <body>
 
@@ -35,6 +36,12 @@
 			</li>
 		</core:forEach>
 	</ul>
+	
+	<form action="${linkEntradaNovaEmpresa}" method="post">
+	
+		<button type="submit">Nova Empresa</button>
+	
+	</form>
 
 </body>
 </html>

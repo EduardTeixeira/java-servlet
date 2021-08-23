@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<core:url value="/alteraEmpresa" var="linkServletAlteraEmpresa" />
+<core:url value="/entrada" var="linkServletAlteraEmpresa" />
 
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,8 @@
 <body>
 
 	<form action="${linkServletAlteraEmpresa}" method="post">
+	
+		<input type="hidden" name="acao" value="AlteraEmpresa"/>
 	
 		<input type="hidden" name="id" value="${empresa.id}"/>
 
