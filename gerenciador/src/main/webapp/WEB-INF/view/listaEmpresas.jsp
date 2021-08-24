@@ -8,7 +8,7 @@
 
 <core:url value="/entrada?acao=RemoveEmpresa&id=" var="linkServletRemoveEmpresa"/>
 <core:url value="/entrada?acao=MostraEmpresa&id=" var="linkServletMostraEmpresa"/>
-<core:url value="/formNovaEmpresa.jsp" var="linkEntradaNovaEmpresa"/>
+<core:url value="/entrada?acao=NovaEmpresaForm" var="linkEntradaNovaEmpresa"/>
 
 <!DOCTYPE html>
 <html>

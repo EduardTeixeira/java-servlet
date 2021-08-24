@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-public class NovaEmpresa {
+public class NovaEmpresa implements IAcao{
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 
 		System.out.println("Ação Cadastrando nova empresa");
 
@@ -38,12 +39,14 @@ public class NovaEmpresa {
 
 		request.setAttribute("empresa", empresa.getNome());
 
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+//		response.sendRedirect("entrada?acao=ListaEmpresas");
 
 //		// chamar o JSP
 //		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
 //		request.setAttribute("empresa", empresa.getNome());
 //		rd.forward(request, response);
+
+		return "redirect:entrada?acao=ListaEmpresas";
 
 	}
 
